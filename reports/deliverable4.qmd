@@ -1,0 +1,526 @@
+# Deliverable 4
+
+This file will have the following:
+
+* Project Overview
+* Project Description
+* Database Design
+* Project Management
+
+## Project Overview
+
+This section provides the URL links to both the project 3 and 4 deliverable videos and the Github.
+
+### Project Deliverable 3 Video
+This link contians a video of deliverable 3 which is about why we want to create this database:
+
+- https://vcu.mediaspace.kaltura.com/media/GMT20231016-002912_Recording_640x360/1_2tmjnfba 
+
+### Project Deliverable 4 Video
+This link contains a video of deliverable 4 which summarizes the database design solution, discussion of any design tradeoffs, and reflections on the overall process:
+
+- https://vcu.mediaspace.kaltura.com/media/GMT20231016-033301_Recording_640x360/1_yrsn3bg4 
+
+### Github Repository URL
+This link is for the Github Repository:
+
+- https://github.com/cmsc-vcu/cmsc508-fa2023-prj-mariokart_group47 
+
+## Project Description
+
+This section will help provide context of what this project is about.
+
+### Problem Domain
+- Players can choose between a lot of characters, vehicles, wheels, and gliders when racing
+- This makes it a little difficult for players to compare the stats of their selections
+- To make it even more difficult, in the game, you can only see the stats of the vehicle, wheels, and gliders with only a bar graph of their stats
+- However, when selecting a character, you are not able to see their stats in the game which makes it difficult for players to choose which characters stats they prefer
+
+### Need
+- This database is needed because we believe that this will make it a lot easier for players to compare the stats of each character, vehicle, wheels, and glider
+- Which will ultimately allow the player to efficiently choose their most desired combination
+
+### Context, Scope and Perspective
+- This DB is for anyone that wants to play Mario Kart both casually or competitively
+
+### User roles and use cases
+- This will be for the literally anyone that wants to play Mario Kart
+- They will want to use this when selecting their characters and their ultimate vehicle combination
+- So they will be using this at the beginning where they have the character selection and vehicle selection which is always at the beginning of the grand prix race
+- They could also use this when selecting a specific grand prix to see which type of maps they like the most from our DB
+
+### Security and Privacy
+- We the creators will be the only ones with admin access, since we don’t want anyone messing up or changing the stats and fooling others with it
+- Anyone can have access to only view the DB to actually see the stats but they won’t have editing privileges
+
+## Database Description
+
+This section will contain ERD's, relational schemas, FD's, and specific queries.
+
+### Entity-Relationship Diagram (ERD)
+Crows foot
+```{mermaid}
+erDiagram
+    character ||--|| vehicle : has
+    character ||--|| wheel : has
+    character ||--|| glider : has
+
+
+    character }|--|| maps : located
+    character }|--|{ items : hold
+
+
+    character {
+        string name
+        int weight
+        int acceleration
+        int on_road_traction
+        int off_road_traction
+        int mini_turbo
+        int ground_speed
+        int water_speed
+        int antigravity_speed
+        int air_speed
+        int ground_handling
+        int water_handling
+        int antigravity_handling
+        int air_handling
+        int invincibility
+    }
+    vehicle {
+        string name
+        int weight
+        int acceleration
+        int on_road_traction
+        int off_road_traction
+        int mini_turbo
+ int ground_speed
+        int water_speed
+        int antigravity_speed
+        int air_speed
+        int ground_handling
+        int water_handling
+        int antigravity_handling
+        int air_handling
+        int invincibility
+    }
+    wheel {
+        string name
+        int weight
+        int acceleration
+        int on_road_traction
+        int off_road_traction
+        int mini_turbo
+        int ground_speed
+        int water_speed
+        int antigravity_speed
+        int air_speed
+        int ground_handling
+        int water_handling
+        int antigravity_handling
+        int air_handling
+        int invincibility
+    }
+    glider {
+        string name
+        int weight
+        int acceleration
+        int on_road_traction
+        int off_road_traction
+        int mini_turbo
+        int ground_speed
+        int water_speed
+        int antigravity_speed
+        int air_speed
+        int ground_handling
+        int water_handling
+  int antigravity_handling
+        int air_handling
+        int invincibility
+    }
+    maps {
+        string name
+        string cup
+    }
+    items {
+        string name
+        string type
+        int chance_obtaining
+    }
+```
+
+
+
+### Relational Schemas
+Entities:
+- Characters
+  - Name
+  - WG: Weight
+  - AC: Acceleration
+  - ON: On-Road traction
+  - OF: (Off-Road) Traction
+  - MT: Mini-Turbo
+  - SL: Ground Speed
+  - SW: Water Speed
+  - SA: Anti-Gravity Speed
+  - SG: Air Speed
+  - TL: Ground Handling
+  - TW: Water Handling
+  - TA: Anti-Gravity Handling
+  - TG: Air Handling
+  - IV: Invincibility
+
+
+- Vehicle
+  - Name
+  - WG: Weight
+  - AC: Acceleration
+  - ON: On-Road traction
+  - OF: (Off-Road) Traction
+  - MT: Mini-Turbo
+  - SL: Ground Speed
+  - SW: Water Speed
+  - SA: Anti-Gravity Speed
+  - SG: Air Speed
+  - TL: Ground Handling
+  - TW: Water Handling
+  - TA: Anti-Gravity Handling
+  - TG: Air Handling
+  - IV: Invincibility
+
+
+- Wheels
+  - Name
+  - WG: Weight
+  - AC: Acceleration
+  - ON: On-Road traction
+  - OF: (Off-Road) Traction
+  - MT: Mini-Turbo
+  - SL: Ground Speed
+  - SW: Water Speed
+  - SA: Anti-Gravity Speed
+  - SG: Air Speed
+  - TL: Ground Handling
+  - TW: Water Handling
+  - TA: Anti-Gravity Handling
+  - TG: Air Handling
+  - IV: Invincibility
+
+
+- Gliders
+  - Name
+  - WG: Weight
+  - AC: Acceleration
+  - ON: On-Road traction
+  - OF: (Off-Road) Traction
+  - MT: Mini-Turbo
+  - SL: Ground Speed
+  - SW: Water Speed
+  - SA: Anti-Gravity Speed
+  - SG: Air Speed
+  - TL: Ground Handling
+  - TW: Water Handling
+  - TA: Anti-Gravity Handling
+  - TG: Air Handling
+  - IV: Invincibility
+
+
+- Maps
+  - Name
+  - Cup
+  - Boosters
+
+
+- Items
+  - Name
+  - Type of item (Self boost or attack)
+  - Chance of obtaining
+
+
+- Coins
+  - Amount
+  - Percent Boost
+
+
+- Characters:
+  - Attributes:
+    - Name (Type: VARCHAR, Domain: Any character string)
+    - Character_Weight (Type: VARCHAR, Domain: Any character string)
+    - Acceleration to Invincibility (Type: VARCHAR, Domain: Any character string)
+  - Constraints:
+    - No NULL values for any attribute.
+  - Primary Key: Name
+
+- Items:
+  - Attributes:
+    - Name (Type: VARCHAR, Domain: Any character string)
+    - Type (Type: VARCHAR, Domain: Any character string)
+    - Chance_of_Getting (Type: VARCHAR, Domain: Any character string)
+  - Constraints:
+    - No NULL values for any attribute.
+    - Characters can hold max of 2 items
+  - Primary Key: Name
+
+- Vehicles:
+  - Attributes:
+    - Name (Type: VARCHAR, Domain: Any character string)
+    - Weight to Invincibility (Type: VARCHAR, Domain: Any character string)
+  - Constraints:
+    - No NULL values for any attribute.
+  - Primary Key: Name
+
+- Wheels:
+  - Attributes:
+    - Name (Type: VARCHAR, Domain: Any character string)
+    - Weight to Invincibility (Type: VARCHAR, Domain: Any character string)
+  - Constraints:
+    - No NULL values for any attribute.
+  - Primary Key: Name
+
+- Gliders:
+  - Attributes:
+    - Name (Type: VARCHAR, Domain: Any character string)
+    - Weight to Invincibility (Type: VARCHAR, Domain: Any character string)
+  - Constraints:
+    - No NULL values for any attribute.
+  - Primary Key: Name
+
+- Maps:
+  - Attributes:
+    - Name (Type: VARCHAR, Domain: Any character string)
+    - Cup (Type: VARCHAR, Domain: Any character string)
+    - Boosters (Type: INTEGER, Domain: Non-negative integers)
+  - Constraints:
+    - No NULL values for any attribute.
+  - Primary Key: Name
+
+- Coins:
+  - Attributes:
+    - Amount (Type: INTEGER, Domain: Non-negative integers)
+    - Percent_Boost (Type: VARCHAR, Domain: Any character string)
+  - Constraints:
+    - No NULL values for any attribute.
+  - Primary Key: Amount
+
+### Functional Dependencies and Normalization
+1. **Characters:**
+   - `Name` → `Character_Weight, Acceleration, On_Road_Traction, Off_Road_Traction, Mini_Turbo, Ground_Speed, Water_Speed, Antigravity_Speed, Air_Speed, Ground_Handling, Water_Handling, Antigravity_Handling, Air_Handling, Invincibility`
+
+1. **Items:**
+   - `Name` → `Type, Chance_of_Getting`
+
+1. **Vehicles:**
+   - `Name` → `Character_Weight, Acceleration, On_Road_Traction, Off_Road_Traction, Mini_Turbo, Ground_Speed, Water_Speed, Antigravity_Speed, Air_Speed, Ground_Handling, Water_Handling, Antigravity_Handling, Air_Handling, Invincibility`
+
+1. **Tires:**
+   - `Name` → `Character_Weight, Acceleration, On_Road_Traction, Off_Road_Traction, Mini_Turbo, Ground_Speed, Water_Speed, Antigravity_Speed, Air_Speed, Ground_Handling, Water_Handling, Antigravity_Handling, Air_Handling, Invincibility`
+
+1. **Gliders:**
+   - `Name` → `Character_Weight, Acceleration, On_Road_Traction, Off_Road_Traction, Mini_Turbo, Ground_Speed, Water_Speed, Antigravity_Speed, Air_Speed, Ground_Handling, Water_Handling, Antigravity_Handling, Air_Handling, Invincibility`
+
+1. **Maps:**
+   - `Name` → `Cup, Boosters`
+
+1. **Coins:**
+   - `Amount` → `Percent_Boost`
+
+
+Normalization to BCNF/4NF:
+- To achieve BCNF/4NF, we need to decompose tables to eliminate partial dependencies and ensure that each non-prime attribute is fully functionally dependent on every superkey.
+
+
+Decomposition Steps:
+1. **Characters:**
+   - The table is already in BCNF. No further decomposition is needed.
+1. **Items:**
+   - No further decomposition is needed as the table is already in BCNF.
+
+1. **Vehicles, Tires, Gliders:**
+   - These tables share common attributes. We can create a new table, say `Attributes`, with the common attributes and then create relationships with `Vehicles`, `Tires`, and `Gliders` tables.
+
+   - **Attributes:**
+     - `Name` (Primary Key)
+     - `Character_Weight, Acceleration, On_Road_Traction, Off_Road_Traction, Mini_Turbo, Ground_Speed, Water_Speed, Antigravity_Speed, Air_Speed, Ground_Handling, Water_Handling, Antigravity_Handling, Air_Handling, Invincibility`
+
+   - **Vehicles:**
+     - `Name` (Primary Key)
+     - `Attributes_Name` (Foreign Key referencing `Attributes`)
+
+   - **Tires:**
+     - `Name` (Primary Key)
+     - `Attributes_Name` (Foreign Key referencing `Attributes`)
+
+   - **Gliders:**
+     - `Name` (Primary Key)
+     - `Attributes_Name` (Foreign Key referencing `Attributes`)
+
+1. **Maps:**
+   - The table is already in BCNF. No further decomposition is needed.
+
+1. **Coins:**
+   - No further decomposition is needed as the table is already in BCNF.
+
+
+Discussion:
+- The decomposition to BCNF/4NF ensures that each table is logically organized, and each non-prime attribute is fully functionally dependent on every superkey.
+- The process guarantees lossless decomposition, meaning that we can reconstruct the original tables without any loss of information.
+
+### Specific queries
+1. How many total items are there?
+    -  π COUNT(Name)(Items)
+1. What are all the stats on Luigi?
+    -  π[columns](σ Name=’Luigi’(characters⋈vehicles⋈wheels⋈gliders))
+1. What is the max speed King Boo can go?
+    -  π[Acceleration](σ Name=’Luigi’(characters⋈vehicles⋈wheels⋈gliders))
+1. How many maps are there?
+    -  π COUNT(Name)(Maps)
+1. How many different character customization options are there for shy guy?
+    -  COUNT(πName,Type(σName=’Luigi’(vehicles×wheels×gliders)))
+1. What are the chances of getting a red shell in fourth place?
+    -  π_{Chance_of_Getting} (σ_{Name='Red Shell'}(items))
+1. How many characters are there?
+    -  π COUNT(Name)(Characters)
+1. How many vehicles can you choose from?
+    -  π COUNT(Name)(Vehicles)
+1. How many wheels can you choose from?
+    -  π COUNT(Name)(Wheels)
+1. How many gliders can you choose from?
+    -  π COUNT(Name)(Gliders)
+1. How many boosters are there on Rainbow road?
+    -  π Boosters(σ Name=’Rainbow Road’(maps))
+1. How fast can you go if you have max coins?
+    -  πPercent_Boost(σAmount=10(coins))
+1. What are the names/types of all the items?
+    -  πName, Type(items)
+1. What are the names of all the playable characters?
+    -  πName(characters)
+1. What are the names of all the maps?
+    -  πName(maps)
+1. Which maps have water?
+    -  πName(σWater=’Yes’(maps))
+1. What is the total weight of luigi with a biddybuggy, has standard tires, and has a flower glider?
+    -  πCharacter_Weight + Vehicle_Weight + Tires_Weight + Glider_Weight(σName=’Luigi’ AND Vehicle=’Biddybuggy’ AND Tires=’Standard Tires’ AND Glider=’Flower Glider’(characters⋈vehicles⋈tires⋈gliders))
+1. Who is the heaviest character?
+    -  πName, Character_Weight(σCharacter_Weight = MAX(Character_Weight)(characters))
+1. What are the stats of the Sports Coupe?
+    -  σName=’Standard Kart’(characters⋈vehicles⋈wheels⋈gliders)
+1. Which combination has the highest acceleration stat?
+    -  πCharacters, Vehicles, Wheels, Gliders, Acceleration(σAcceleration = MAX(Acceleration)(characters⋈vehicles⋈wheels⋈gliders))
+
+
+### Sample Data
+Characters
+<table align="center">
+<tr><td padding="0px">
+
+| Name    | Character_Weight | Acceleration | On_Road_Traction | Off_Road_Traction | Mini_Turbo | Ground_Speed | Water_Speed | Antigravity_Speed | Air_Speed | Ground_Handling | Water_Handling | Antigravity_Handling | Air_Handling | Invincibility |
+|---------|-------------------|--------------|------------------|-------------------|------------|--------------|-------------|-------------------|-----------|-----------------|----------------|----------------------|--------------|----------------|
+| Mario   | Medium            | High         | High             | Medium            | High       | High         | Medium      | High              | High      | High            | Medium         | Medium               | High         | Yes            |
+| Luigi   | Medium            | High         | High             | Medium            | High       | High         | Medium      | High              | High      | High            | Medium         | Medium               | High         | Yes            |
+| Peach   | Light             | High         | High             | Medium            | High       | High         | Medium      | High              | High      | High            | Medium         | Medium               | High         | Yes            |
+| Bowser  | Heavy             | Medium       | Medium           | High              | Medium     | High         | Low         | High              | Medium    | Medium          | Low            | High                 | Medium       | Yes            |
+| Toad    | Light             | High         | High             | Medium            | High       | High         | Medium      | High              | High      | High            | Medium         | Medium               | High         | Yes            |
+</td></tr></table>
+
+Items
+<table align="center">
+<tr><td padding="0px">
+
+| Name             | Type      | Chance_of_Getting |
+|------------------|-----------|-------------------|
+| Mushroom         | Boost     | High              |
+| Star             | Boost     | Medium            |
+| Bullet Bill      | Boost     | Low               |
+| Banana           | Defensive | High              |
+| Lightning        | Offensive | Low               |
+| Blue Shell       | Offensive | Very Low          |
+| Red Shell        | Offensive | Medium            |
+| Green Shell      | Offensive | High              |
+| Bob-omb          | Offensive | Medium            |
+| Golden Mushroom  | Boost     | Medium            |
+| Fire Flower      | Offensive | High              |
+| Boomerang Flower | Offensive | Medium            |
+| Super Horn       | Defensive | High              |
+| Blooper          | Defensive | Medium            |
+</td></tr></table>
+
+Vehicles
+<table align="center">
+<tr><td padding="0px">
+
+| Name          | Character_Weight | Acceleration | On_Road_Traction | Off_Road_Traction | Mini_Turbo | Ground_Speed | Water_Speed | Antigravity_Speed | Air_Speed | Ground_Handling | Water_Handling | Antigravity_Handling | Air_Handling | Invincibility |
+|---------------|-------------------|--------------|------------------|-------------------|------------|--------------|-------------|-------------------|-----------|-----------------|----------------|----------------------|--------------|----------------|
+| Standard Kart | Medium            | Medium       | Medium           | Medium            | Medium     | Medium       | Medium      | Medium            | Medium    | Medium          | Medium         | Medium               | Medium       | No             |
+| Biddybuggy    | Light             | High         | High             | Medium            | High       | High         | Medium      | High              | High      | High            | Medium         | Medium               | High         | No             |
+| Circuit Special | Heavy           | Low          | Low              | High              | Low        | High         | Low         | High              | Low       | Low             | Low            | High                 | Low          | No             |
+| Pipe Frame    | Medium            | High         | High             | Medium            | High       | High         | Medium      | High              | High      | High            | Medium         | Medium               | High         | No             |
+| Flame Rider   | Heavy             | Low          | Low              | High              | Low        | High         | Low         | High              | Low       | Low             | Low            | High                 | Low          | No             |
+</td></tr></table>
+
+Wheels
+<table align="center">
+<tr><td padding="0px">
+
+| Name             | Character_Weight | Acceleration | On_Road_Traction | Off_Road_Traction | Mini_Turbo | Ground_Speed | Water_Speed | Antigravity_Speed | Air_Speed | Ground_Handling | Water_Handling | Antigravity_Handling | Air_Handling | Invincibility |
+|------------------|-------------------|--------------|------------------|-------------------|------------|--------------|-------------|-------------------|-----------|-----------------|----------------|----------------------|--------------|----------------|
+| Standard Tires   | Medium            | Medium       | Medium           | Medium            | Medium     | Medium       | Medium      | Medium            | Medium    | Medium          | Medium         | Medium               | Medium       | No             |
+| Roller           | Light             | High         | High             | Medium            | High       | High         | Medium      | High              | High      | High            | Medium         | Medium               | High         | No             |
+| Off-Road Tires   | Heavy             | Medium       | Medium           | High              | Medium     | High         | Low         | High              | Medium    | Medium          | Low            | High                 | Medium       | No             |
+| Slim Tires       | Medium            | High         | High             | Medium            | High       | High         | Medium      | High              | High      | High            | Medium         | Medium               | High         | No             |
+| Monster Tires    | Heavy             | Low          | Low              | High              | Low        | High         | Low         | High              | Low       | Low             | Low            | High                 | Low          | No             |
+</td></tr></table>
+
+Glider
+<table align="center">
+<tr><td padding="0px">
+
+| Name               | Character_Weight | Acceleration | On_Road_Traction | Off_Road_Traction | Mini_Turbo | Ground_Speed | Water_Speed | Antigravity_Speed | Air_Speed | Ground_Handling | Water_Handling | Antigravity_Handling | Air_Handling | Invincibility |
+|--------------------|-------------------|--------------|------------------|-------------------|------------|--------------|-------------|-------------------|-----------|-----------------|----------------|----------------------|--------------|----------------|
+| Super Glider       | Medium            | High         | High             | Medium            | High       | High         | Medium      | High              | High      | High            | Medium         | Medium               | High         | No             |
+| Flower Glider      | Medium            | High         | High             | Medium            | High       | High         | Medium      | High              | High      | High            | Medium         | Medium               | High         | No             |
+| Parachute          | Medium            | High         | High             | Medium            | High       | High         | Medium      | High              | High      | High            | Medium         | Medium               | High         | No             |
+| Plane Glider       | Medium            | High         | High             | Medium            | High       | High         | Medium      | High              | High      | High            | Medium         | Medium               | High         | No             |
+</td></tr></table>
+
+Maps
+<table align="center">
+<tr><td padding="0px">
+
+| Name            | Cup           | Boosters |
+|-----------------|---------------|----------|
+| Mushroom Gorge  | Mushroom Cup  | 3        |
+| Rainbow Road    | Star Cup      | 5        |
+| Bowser's Castle | Flower Cup    | 4        |
+| Toad's Turnpike  | Shell Cup     | 2        |
+| Dolphin Shoals  | Banana Cup    | 3        |
+| Mount Wario     | Special Cup   | 6        |
+| Sweet Sweet Canyon | Mushroom Cup | 4        |
+| Hyrule Circuit  | Triforce Cup  | 3        |
+</td></tr></table>
+
+## Project Management
+
+This section is to show how we will plan on finishing the project by certain milestones/deadlines.
+
+### Draft Project Schedule
+<table align="center">
+<tr><td padding="0px">
++-------------------------------------------------------------+
+|                           Mario Kart Database                           |
++-------------------------------------------------------------+
+| Task                 | Start Date | Duration | End Date | % Complete |
++----------------------+------------+----------+----------+------------+
+| Deliverable 4    | 2023-10-10 |    5 days|2023-10-15|     50%    |
++----------------------+------------+----------+----------+------------+
+| Deliverable 5    | 2023-10-16 |   10 days|2023-10-31|     75%    |
++----------------------+------------+----------+----------+------------+
+| Deliverable 6    | 2023-11-01 |    8 days|2023-11-16|     90%    |
++----------------------+------------+----------+----------+------------+
+| Deliverable 7    | 2023-11-17 |    6 days|2023-12-01|     100%     |
++----------------------+------------+----------+----------+------------+
+| Final Delivery       | 2023-12-01 |     2 days|2023-12-03|            |
++----------------------+------------+----------+----------+------------+
+</td></tr></table>
+
+### Video
+This is already provided. See above at section Project Deliverable 4 Video.

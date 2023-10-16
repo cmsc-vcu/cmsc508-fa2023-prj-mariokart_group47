@@ -1,28 +1,28 @@
-# Welcome to Semecter Project repository
+# Welcome to Semester Project repository
 
-Use this project scaffold for all your deliverables for the semester long project including deliverables 4 through 7.
-Prior deliverables (1-3) did not require written documentation, and thus no repo.
+We created a database for the game ***Mario Kart 8*** and the main focus was to allow people to see all the different kinds of stats that the characters, vehicles, wheels, and glider have. 
+Normally, you are not able to see the stats of any character when choosing. However, this database will alllow the player to see each individual stat in an efficient way to ultimately create a more easier and fun way of playing the game!
 
-DO NOT USE THE *./docs* FOLDER unless you're comfy with what you're doing!  This folder name is reserved for use by Quarto. Quarto will create and manage a public, static website in this folder once we set it up in a later assignment. You should
-not store source files in the *./docs* folder unless you explicitly want them shared publically.
+This project consists of deliverables written and created by the following authors:
+- Daniel Kim
+  - Email: danielk9638@gmail.com
+  - Github username: danielkCS11
+- Jeremiah Pagdanganan
+  - Email: pagdanganja@vcu.edu
+  - Github username: jeremiah22p
 
-I created a few folders that you can use or not:
+## Important Files
 
-- *./src* - to hold your python/flask source code
-- *./reports* - to hold your deliverable reports. Within this folder I recommend a consistent naming convention for file like *deliver4.qmd*, *deliver5.qmd*, etc.
+The repository will have the following folders:
+- reports - To hold all of the deliverable reports. This will usually contain a qmd and html file
+- src - To hold the source code
 
-YOU own this project so you can set up the folder structure as you will. I provided a simple structure to help you get started only.
+## Video URL's
 
-PLEASE MODIFY THIS README FILE per instructions in [project deliverable 4](https://virginiacommonwealth.instructure.com/courses/85746/assignments/725440?module_item_id=3019749).
-You'll need to be adding links to your previous *pitch* video for deliverable 3.  You'll also want to include team member info in the readme.
+### Project Deliverable 3 Video
+This link contians a video of deliverable 3 which is about why we want to create this database: 
+- ff
 
-To learn more about writing good README.md files, see:
-
-<https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/>
-
-This is a scaffold project. I’ll be providing scaffolds throughout the
-semester to get you working faster, and to make grading much easier for
-the TA team.
-
-Good luck!
-
+### Project Deliverable 4 Video
+This link contains a video of deliverable 4 which summarizes the database design solution, discussion of any design tradeoffs, and reflections on the overall process:
+- ff
