@@ -21,8 +21,10 @@ The repository will have the following folders:
 
 ### Project Deliverable 3 Video
 This link contians a video of deliverable 3 which is about why we want to create this database: 
-- ff
+
+- https://vcu.mediaspace.kaltura.com/media/GMT20231016-002912_Recording_640x360/1_2tmjnfba 
 
 ### Project Deliverable 4 Video
 This link contains a video of deliverable 4 which summarizes the database design solution, discussion of any design tradeoffs, and reflections on the overall process:
-- ff
+
+- https://vcu.mediaspace.kaltura.com/media/GMT20231016-033301_Recording_640x360/1_yrsn3bg4 
