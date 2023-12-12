@@ -32,4 +32,4 @@ This link contains a video of deliverable 4 which summarizes the database design
 ### Project Deliverable 7 Video
 This link contains a video of deliverable 7 which summarizes the entire project, not just the implementation. We also discuss future considerations and reflections on the project:
 
-- //
+- https://vcu.mediaspace.kaltura.com/media/GMT20231212-042612_Recording_1280x720/1_2shygkel 

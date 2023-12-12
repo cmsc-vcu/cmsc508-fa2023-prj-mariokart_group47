@@ -33,7 +33,7 @@ This link contains a video of deliverable 4 which summarizes the database design
 ### Project Deliverable 7 Video
 This link contains a video of deliverable 7 which summarizes the entire project, not just the implementation. We also discuss future considerations and reflections on the project:
 
-- //
+- https://vcu.mediaspace.kaltura.com/media/GMT20231212-042612_Recording_1280x720/1_2shygkel 
 
 ### Github Source Code Repository URL
 This link contains all of the source code for the databases that we created through SQL and API servers:
@@ -477,8 +477,6 @@ This section is to show how we will plan on finishing the project by certain mil
 +----------------------+------------+----------+----------+------------+
 </td></tr></table>
 
-### Video
-This is already provided. See above at section Project Deliverable 4 Video.
 
 ## Future Considerations
 
