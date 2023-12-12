@@ -1,5 +1,5 @@
 ---
-title: Deliverable 4
+title: Deliverable 7
 date: 12/10/23
 author: Daniel Kim, Jeremiah Pagdanganan
 format:
@@ -8,7 +8,6 @@ format:
         toc: false
         embed-resources: true
 ---
-
 
 This file will have the following:
 
@@ -30,6 +29,16 @@ This link contians a video of deliverable 3 which is about why we want to create
 This link contains a video of deliverable 4 which summarizes the database design solution, discussion of any design tradeoffs, and reflections on the overall process:
 
 - https://vcu.mediaspace.kaltura.com/media/GMT20231016-033301_Recording_640x360/1_yrsn3bg4 
+
+### Project Deliverable 7 Video
+This link contains a video of deliverable 7 which summarizes the entire project, not just the implementation. We also discuss future considerations and reflections on the project:
+
+- //
+
+### Github Source Code Repository URL
+This link contains all of the source code for the databases that we created through SQL and API servers:
+
+- https://github.com/cmsc-vcu/cmsc508-fa2023-prj-mariokart_group47/tree/main/src 
 
 ### Github Repository URL
 This link is for the Github Repository:
@@ -65,7 +74,7 @@ This section will help provide context of what this project is about.
 
 ## Database Description
 
-This section will contain ERD's, relational schemas, FD's, and specific queries.
+This section will contain ERD.
 
 ### Entity-Relationship Diagram (ERD)
 Crows foot
@@ -74,11 +83,6 @@ erDiagram
     character ||--|| vehicle : has
     character ||--|| wheel : has
     character ||--|| glider : has
-
-
-    character }|--|| maps : located
-    character }|--|{ items : hold
-
 
     character {
         string name
@@ -104,7 +108,7 @@ erDiagram
         int on_road_traction
         int off_road_traction
         int mini_turbo
- int ground_speed
+        int ground_speed
         int water_speed
         int antigravity_speed
         int air_speed
@@ -144,22 +148,11 @@ erDiagram
         int air_speed
         int ground_handling
         int water_handling
-  int antigravity_handling
+        int antigravity_handling
         int air_handling
         int invincibility
     }
-    maps {
-        string name
-        string cup
-    }
-    items {
-        string name
-        string type
-        int chance_obtaining
-    }
 ```
-
-
 
 ### Relational Schemas
 Entities:
@@ -235,21 +228,6 @@ Entities:
   - IV: Invincibility
 
 
-- Maps
-  - Name
-  - Cup
-  - Boosters
-
-
-- Items
-  - Name
-  - Type of item (Self boost or attack)
-  - Chance of obtaining
-
-
-- Coins
-  - Amount
-  - Percent Boost
 
 
 - Characters:
@@ -259,16 +237,6 @@ Entities:
     - Acceleration to Invincibility (Type: VARCHAR, Domain: Any character string)
   - Constraints:
     - No NULL values for any attribute.
-  - Primary Key: Name
-
-- Items:
-  - Attributes:
-    - Name (Type: VARCHAR, Domain: Any character string)
-    - Type (Type: VARCHAR, Domain: Any character string)
-    - Chance_of_Getting (Type: VARCHAR, Domain: Any character string)
-  - Constraints:
-    - No NULL values for any attribute.
-    - Characters can hold max of 2 items
   - Primary Key: Name
 
 - Vehicles:
@@ -295,23 +263,6 @@ Entities:
     - No NULL values for any attribute.
   - Primary Key: Name
 
-- Maps:
-  - Attributes:
-    - Name (Type: VARCHAR, Domain: Any character string)
-    - Cup (Type: VARCHAR, Domain: Any character string)
-    - Boosters (Type: INTEGER, Domain: Non-negative integers)
-  - Constraints:
-    - No NULL values for any attribute.
-  - Primary Key: Name
-
-- Coins:
-  - Attributes:
-    - Amount (Type: INTEGER, Domain: Non-negative integers)
-    - Percent_Boost (Type: VARCHAR, Domain: Any character string)
-  - Constraints:
-    - No NULL values for any attribute.
-  - Primary Key: Amount
-
 ### Functional Dependencies and Normalization
 1. **Characters:**
    - `Name` → `Character_Weight, Acceleration, On_Road_Traction, Off_Road_Traction, Mini_Turbo, Ground_Speed, Water_Speed, Antigravity_Speed, Air_Speed, Ground_Handling, Water_Handling, Antigravity_Handling, Air_Handling, Invincibility`
@@ -327,12 +278,6 @@ Entities:
 
 1. **Gliders:**
    - `Name` → `Character_Weight, Acceleration, On_Road_Traction, Off_Road_Traction, Mini_Turbo, Ground_Speed, Water_Speed, Antigravity_Speed, Air_Speed, Ground_Handling, Water_Handling, Antigravity_Handling, Air_Handling, Invincibility`
-
-1. **Maps:**
-   - `Name` → `Cup, Boosters`
-
-1. **Coins:**
-   - `Amount` → `Percent_Boost`
 
 
 Normalization to BCNF/4NF:
@@ -534,3 +479,17 @@ This section is to show how we will plan on finishing the project by certain mil
 
 ### Video
 This is already provided. See above at section Project Deliverable 4 Video.
+
+## Future Considerations
+
+Something that we think that needs to be done to take our project to the next level is creating a website that would contain all of this information as well as the databse that we created for it. If we do decide to learn how to create a website using javascript and html/css then we can definitely take our project to the next level.
+
+We think if we had more time, we would definitley add items, maps, and coins to the database.
+
+## Reflections
+
+The project went okay for us. We couldn't really achieve what we originally intended to build because we couldn't add in the entities and attributes for items, coins, and maps. What kept us from achieving it was the amount of time we had. 
+
+We were starting to run out of time because of all the other classes assingments and tests so it was really hard for us to manage everything.
+
+We think we should have spent a little bit more time working on this project throughout the semester because we had a couple roadblocks in our project like figuring out the whole API situation which is taking up a lot of time.

@@ -14,8 +14,8 @@ This project consists of deliverables written and created by the following autho
 ## Important Files
 
 The repository will have the following folders:
-- reports - To hold all of the deliverable reports. This will usually contain a qmd and html file
-- src - To hold the source code
+- reports - This contains the files/htmls for deliverable 4 and deliverable 7
+- src - This holds the DDL and DML files as well as the API server files
 
 ## Video URL's
 
@@ -28,3 +28,8 @@ This link contians a video of deliverable 3 which is about why we want to create
 This link contains a video of deliverable 4 which summarizes the database design solution, discussion of any design tradeoffs, and reflections on the overall process:
 
 - https://vcu.mediaspace.kaltura.com/media/GMT20231016-033301_Recording_640x360/1_yrsn3bg4 
+
+### Project Deliverable 7 Video
+This link contains a video of deliverable 7 which summarizes the entire project, not just the implementation. We also discuss future considerations and reflections on the project:
+
+- //
